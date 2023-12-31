@@ -212,3 +212,23 @@ input:checked+*~label .star::after {
 .starContainer:hover label:hover~label .star::after {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .slider {
+    width: 100vw;
+    height: 50vw;
+  }
+
+  .card {
+    height: 300px;
+    width: 170px;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  .home {
+    margin-top: 70px;
+  }
+}
