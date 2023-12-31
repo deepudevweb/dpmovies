@@ -1,0 +1,214 @@
+* {
+  border: none;
+}
+
+body {
+  background-color: black;
+}
+
+/* slide css */
+
+.slider {
+  overflow: hidden;
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+}
+
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  background-size: cover;
+  background-position: center;
+  animation: slide 9s infinite;
+}
+
+.slider .slide:nth-child(1) {
+  background-image: url('./assets/transformer.jpg');
+  animation-delay: -2s;
+}
+
+.slider .slide:nth-child(2) {
+  background-image: url('./assets/loki.jpg');
+  animation-delay: -3s;
+}
+  
+.slider .slide:nth-child(3) {
+  background-image: url('./assets/deadpool3.jpg');
+  animation-delay: -4s;
+}
+  
+.slider .slide:nth-child(4) {
+  background-image: url('./assets/marvels.jpg');
+  animation-delay: -5s;
+}
+
+.slider .slide:nth-child(5) {
+  background-image: url('./assets/venom.jpg');
+  animation-delay: -6s;
+}
+.slider .slide:nth-child(6) {
+  background-image: url('./assets/lagacy.jpg');
+  animation-delay: -7s;
+}
+.slider .slide:nth-child(7) {
+  background-image: url('./assets/panda.jpg');
+  animation-delay: -8s;
+}
+.slider .slide:nth-child(8) {
+  background-image: url('./assets/spider-man.jpg');
+  animation-delay: -9s;
+}
+.slider .slide:nth-child(9) {
+  background-image: url('./assets/asha.jpg');
+  animation-delay: -10;
+}
+
+@keyframes slide {
+  0%, 20%, 100% {
+    transform: translateX(0);
+    animation-timing-function: ease;
+  }
+  27% {
+    transform: translateX(-100%);
+    animation-timing-function: step-end;
+  }
+  80% {
+    transform: translateX(100%);
+    animation-timing-function: ease;
+  }
+}
+
+.home {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 18px;
+  margin-top: 12px;
+
+}
+
+.card {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  height: 342px;
+  width: 200px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  height: 300px;
+  width: auto;
+
+}
+
+.movie-name {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  color: #fff;
+}
+
+.starContainer {
+  display: inline-flex;
+  background-color: black;
+  width: 100%;
+  position: relative;
+  bottom: 6px;
+  height: 50px;
+  background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+/* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
+input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+label {
+  /* hide highlight effect when tapping input on ios */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+
+label~label {
+  /* put space between the stars, use padding on label instead of margin on stars so there is no gap between the labels and the hover effect is smooth when moving between stars */
+  padding-left: 8px;
+}
+
+.star {
+  position: relative;
+  font-size: 30px;
+  color: grey;
+  /* prevent the star symbol from being selected as text when interacting with it */
+  user-select: none;
+}
+
+/* put a full star on top of the empty star */
+.star::after {
+  color: hotpink;
+  position: absolute;
+  left: 0;
+  content: "\2605";
+}
+
+/* outline the focused star */
+input:focus+label .star {
+  outline: 2px solid cornflowerblue;
+}
+
+/* hide any full stars after the checked radio's star */
+input:checked+*~label .star::after {
+  opacity: 0;
+}
+
+/* when the star container (and therefore any of the stars within it) is being hovered over, show all the full stars (we will hide the necessary ones in the rule below) */
+.starContainer:hover label .star::after {
+  opacity: 1;
+}
+
+/* now, hide any full stars that appear after the currently hovered star */
+.starContainer:hover label:hover~label .star::after {
+  opacity: 0;
+}
