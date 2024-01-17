@@ -6,81 +6,75 @@ body {
   background-color: black;
 }
 
+/* navbar ccs */
+
+/* Navbar.css */
+
+.navbar {
+  background-color: #232F3E;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-logo img {
+  max-width: 100px;
+  scale: 1.8;
+}
+
+.navbar-links ul {
+  list-style: none;
+  padding: 2px 31px;
+  margin: 0px 6px;
+  display: flex;
+}
+
+.navbar-links ul li {
+  margin-right: 20px;
+}
+
+.navbar-links ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-search input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.navbar-search button {
+  background-color: #F5C518;
+  color: #232F3E;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-search button:hover {
+  background-color: #FFD55E;
+}
+
+
 /* slide css */
 
-.slider {
-  overflow: hidden;
-  width: 100vw;
-  height: 80vh;
-  position: relative;
-}
-
-.slider .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 101%;
-  background-size: cover;
-  background-position: center;
-  animation: slide 9s infinite;
-}
-
-.slider .slide:nth-child(1) {
-  background-image: url('./assets/transformer.jpg');
-  animation-delay: -2s;
-}
-
-.slider .slide:nth-child(2) {
-  background-image: url('./assets/loki.jpg');
-  animation-delay: -3s;
-}
-  
-.slider .slide:nth-child(3) {
-  background-image: url('./assets/deadpool3.jpg');
-  animation-delay: -4s;
-}
-  
-.slider .slide:nth-child(4) {
-  background-image: url('./assets/marvels.jpg');
-  animation-delay: -5s;
-}
-
-.slider .slide:nth-child(5) {
-  background-image: url('./assets/venom.jpg');
-  animation-delay: -6s;
-}
-.slider .slide:nth-child(6) {
-  background-image: url('./assets/lagacy.jpg');
-  animation-delay: -7s;
-}
-.slider .slide:nth-child(7) {
-  background-image: url('./assets/panda.jpg');
-  animation-delay: -8s;
-}
-.slider .slide:nth-child(8) {
-  background-image: url('./assets/spider-man.jpg');
-  animation-delay: -9s;
-}
-.slider .slide:nth-child(9) {
-  background-image: url('./assets/asha.jpg');
-  animation-delay: -10;
-}
-
-@keyframes slide {
-  0%, 20%, 100% {
-    transform: translateX(0);
-    animation-timing-function: ease;
-  }
-  27% {
-    transform: translateX(-100%);
-    animation-timing-function: step-end;
-  }
-  80% {
-    transform: translateX(100%);
-    animation-timing-function: ease;
-  }
-}
 
 .home {
   flex-wrap: wrap;
@@ -104,6 +98,7 @@ body {
   transform: scale(1.1);
 }
 
+
 .card img {
   height: 300px;
   width: auto;
@@ -112,113 +107,34 @@ body {
 
 .movie-name {
   position: absolute;
-  bottom: 50px;
+  bottom: 5px;
   left: 10px;
-  color: #fff;
+  color: #ffffff;
+  display: none;
 }
 
-.starContainer {
-  display: inline-flex;
-  background-color: black;
+.card:hover .movie-name {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
   width: 100%;
-  position: relative;
-  bottom: 6px;
-  height: 50px;
-  background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-  animation: gradient 15s ease infinite;
-  background-size: 400% 400%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.51);
+}
+
+.movie-name p {
+  font-size: 10px;
 
 }
 
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-
-}
 
 /* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
-input {
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-label {
-  /* hide highlight effect when tapping input on ios */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  position: relative;
-}
-
-label~label {
-  /* put space between the stars, use padding on label instead of margin on stars so there is no gap between the labels and the hover effect is smooth when moving between stars */
-  padding-left: 8px;
-}
-
-.star {
-  position: relative;
-  font-size: 30px;
-  color: grey;
-  /* prevent the star symbol from being selected as text when interacting with it */
-  user-select: none;
-}
-
-/* put a full star on top of the empty star */
-.star::after {
-  color: hotpink;
-  position: absolute;
-  left: 0;
-  content: "\2605";
-}
-
-/* outline the focused star */
-input:focus+label .star {
-  outline: 2px solid cornflowerblue;
-}
-
-/* hide any full stars after the checked radio's star */
-input:checked+*~label .star::after {
-  opacity: 0;
-}
-
-/* when the star container (and therefore any of the stars within it) is being hovered over, show all the full stars (we will hide the necessary ones in the rule below) */
-.starContainer:hover label .star::after {
-  opacity: 1;
-}
-
-/* now, hide any full stars that appear after the currently hovered star */
-.starContainer:hover label:hover~label .star::after {
-  opacity: 0;
-}
 
 @media (max-width: 768px) {
-  .slider {
-    width: 100vw;
-    height: 50vw;
-  }
-
   .card {
     height: 300px;
     width: 170px;
@@ -231,4 +147,170 @@ input:checked+*~label .star::after {
   .home {
     margin-top: 70px;
   }
+}
+
+/* details css */
+
+.showcase {
+  width: 80%;
+  height: 500px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.movie-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.showcase img {
+  height: 500px;
+  object-fit: cover;
+  object-position: 0 21%;
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 2cap;
+  border-bottom-right-radius: 20px;
+}
+
+.showcase .movie-det {
+  align-items: center;
+  bottom: 293px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.movie-det .det-left img {
+  width: 340px;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 25px;
+}
+
+.showcase .det-right {
+  text-align: left;
+  margin-left: 17px;
+}
+
+.showcase .det-right .det-top>div {
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px #000;
+}
+
+.showcase .det-right .movie-critic .critic-array {
+  border: 1px solid white;
+  padding: 4px 10px;
+  border-radius: 9px;
+  margin: 2px 4px
+}
+
+
+.showcase .det-right .det-top .movie-title {
+  font-size: 65px;
+  font-weight: 700;
+}
+
+.showcase .movie-links {
+  color: black;
+}
+
+.showcase .movie-heading {
+  color: black;
+}
+
+.showcase .det-right {
+  color: #ffffff;
+}
+
+.showcase .det-right .movie-rating i{
+ padding: 3px 4px;
+ margin: 2px 3px;
+}
+.showcase .det-right-bottom {
+  color: white;
+  margin-top: 5.2rem;
+}
+
+
+.showcase .det-right-bottom .synopsis {
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+.showcase .movie-links {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  bottom: 150px;
+}
+
+.showcase .movie-links .link-heading {
+  color: white;
+  font-size: 2rem;
+}
+
+.showcase .movie-links .movie-home-button1 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  width: 170px;
+  background-color: red;
+}
+
+.showcase .movie-links .movie-imdb-button2 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  width: 150px;
+  background-color: yellow;
+}
+
+
+
+
+.showcase .production-house {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase .production-house .house-image {
+  height: 60px;
+  width: auto;
+  filter: invert(1);
+}
+
+.showcase .production-house .house-name {
+  color: white;
+  flex-direction: column;
+  display: flex;
+}
+
+.showcase .movie-heading {
+  color: white;
+  font-size: 2rem;
+}
+
+.posab {
+  position: absolute;
+}
+.posrel {
+  position: relative;
 }

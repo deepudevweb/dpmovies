@@ -3,6 +3,7 @@ import Card from '../Components/Card'
 import axios from 'axios';
 
 
+
 const home = () => {
 const [movies, setMovies] = useState(null)
 
@@ -23,6 +24,13 @@ const [movies, setMovies] = useState(null)
   useEffect (() => {
      GetMoviesList()
   },[])
+
+  useEffect(() => {
+    document.body.style.backgroundColor = 'black';
+    return () => {
+      document.body.style.backgroundColor = 'black';
+    };
+  }, []);
   if (movies == null) {
     return <h1>Loading...</h1>
   }
@@ -31,7 +39,7 @@ const [movies, setMovies] = useState(null)
       {movies.map((items,index)=> {
         return (
           <>
-          <Card key={index} poster={"https://image.tmdb.org/t/p/original"+ items.poster_path} name={items.title}/>
+          <Card key={index} poster={"https://image.tmdb.org/t/p/original"+ items.poster_path} name={items.title} detail={items.overview} id={items.id}/>
           </>
         )
       })}
