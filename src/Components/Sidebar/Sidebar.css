@@ -1,0 +1,61 @@
+.home {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    row-gap: 18px;
+    margin-top: 12px;
+    padding: 2vmin 5vmin;
+  
+  }
+  
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    transition: all transform 0.2s ease;
+    background-color: rgba(0, 0, 0, 0.144);
+  }
+
+  .posab {
+    position: absolute;
+    bottom: 45px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+  }
+  
+  .posab h1 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  
+  .posrel {
+    position: relative;
+  }
+  
+  .posrel .date-lang {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .posrel .date-lang .date,
+  .posrel .date-lang .lang {
+    font-size: 35px;
+    font-weight: 500;
+  }
+  
+  .posrel img {
+    height: 90vh;
+    object-fit: cover;
+    background-size: cover;
+  }
+  
+  .posrel .story {
+    width: 75%;
+  }
+  
+  .posrel .story .story-tell {
+    font-size: 2.9vmin;
+    font-weight: 600;
+  }
+  

@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import '../Components/Card'
+import '../../Components/Card/Card'
 import axios from 'axios'
 // import '../Details/Details.css'
 import { useParams } from 'react-router-dom'
 import { FaStar } from "react-icons/fa";
 import { RiExternalLinkLine } from "react-icons/ri";
-import EmblaCarousel from './Emblacrouser/EmblaCarousel';
-import './Emblacrouser/Embla.css/embla.css'
+import EmblaCarousel from '../Emblacrouser/EmblaCarousel';
+import '../Emblacrouser/Embla.css/embla.css'
+import './Details.css'
+
 const Details = () => {
   const [movieDetail, setMovieDetail] = useState(null)
   const OPTIONS = {}
   const SLIDE_COUNT = 10
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
 
   function GetMoviesDetail() {
     let text = window.location.href

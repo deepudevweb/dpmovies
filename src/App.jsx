@@ -1,9 +1,7 @@
 import './App.css'
-import Navbar from './Components/Navbar'
-import Home from './Pages/Home'
-import Slidebar from './Components/Slidebar'
+import Home from './Pages/Home/Home'
+import Slidebar from './Components/Sidebar/Slidebar'
 import 'bootstrap/dist/css/bootstrap.css';
-// import EmblaCarousel from './Pages/Emblacrouser/EmblaCarousel';
 
 
 function App() {

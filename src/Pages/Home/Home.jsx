@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../Components/Card'
+import Card from '../../Components/Card/Card'
 import axios from 'axios';
+import './Home.css'
 
 
 
@@ -35,16 +36,22 @@ const [movies, setMovies] = useState(null)
     return <h1>Loading...</h1>
   }
   return (
+    <>
+    <div className="top-heading">
+    <h3>Popular Movies</h3> 
+  </div>
     <div className='home'>
       {movies.map((items,index)=> {
         return (
           <>
-          <Card key={index} poster={"https://image.tmdb.org/t/p/original"+ items.poster_path} name={items.title} detail={items.overview} id={items.id}/>
+          <Card key={index} poster={"https://image.tmdb.org/t/p/original"+ items.poster_path} name={items.title} detail={items.overview} id={items.id} dat={items.release_date} lan={items.original_language}/>
           </>
         )
       })}
+       
     
     </div>
+    </>
   )
 }
 

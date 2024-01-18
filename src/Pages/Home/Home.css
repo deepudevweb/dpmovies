@@ -1,0 +1,7 @@
+.top-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5C518;
+    margin-top: 1.5rem;
+}

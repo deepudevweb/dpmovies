@@ -4,7 +4,8 @@ import React from 'react'
 // import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 // import IconButton from '@mui/material/IconButton';
-import Logo from './Images/icons8-imdb-48.png'
+import Logo from '../Images/icons8-imdb-48.png'
+import './Navbar.css';
 
 
 const Navbar = () => {
@@ -45,4 +46,4 @@ const Navbar = () => {
 //   )
 // }
 
-export default Navbar
+export default Navbar;

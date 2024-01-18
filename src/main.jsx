@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
-import Details from './Pages/Details.jsx'
-import Navbar from './Components/Navbar.jsx'
+import Details from './Pages/Details/Details.jsx'
+import Navbar from './Components/Navbar/Navbar.jsx'
 import { Card } from '@mui/material'
-import Overlay from './Pages/Overlay.jsx'
 import EmblaCarousel from './Pages/Emblacrouser/EmblaCarousel.jsx'
 
 
@@ -17,8 +16,8 @@ const router = createBrowserRouter(
     <Route path='/'>
       {/* <Navbar /> */}
       <Route path="" element={<App/>} />
+      <Route path="navbar" element={<Navbar/>} />
       <Route path="details/:id" element={<Details/>} />
-      <Route path="overlay" element={<Overlay/>} />
       <Route path="card" element={<Card/>} />
       <Route path="emblacrousel" element={<EmblaCarousel/>} />
     </Route>

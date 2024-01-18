@@ -1,7 +1,7 @@
 .embla {
-    --slide-spacing: 1rem;
-    --slide-size: 100%;
-    --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 21%;
+  --slide-height: 22rem;
     padding: 1.6rem;
   }
   .embla__viewport {
@@ -25,7 +25,12 @@
     width: 100%;
     object-fit: cover;
     object-position: 0% 40%;
+    transition: all 0.2s ease;
   }
+  .embla__slide__img:hover {
+    transform: scale(1.1);
+  }
+
   .embla__slide__number {
     width: 4.6rem;
     height: 4.6rem;

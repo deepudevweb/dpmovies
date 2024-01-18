@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import Overlay from '../Pages/Overlay'
 import axios from 'axios';
+import './Sidebar.css'
+
 const Slider = () => {
 
   const [Slide, setSlide] = useState(null)
