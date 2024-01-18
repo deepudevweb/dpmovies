@@ -1,6 +1,10 @@
+
 * {
   border: none;
+  
 }
+
+
 
 body {
   background-color: black;
@@ -131,6 +135,16 @@ body {
 
 }
 
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  transition: all transform 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.144);
+}
+
+
+
+
+
 
 /* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
 
@@ -148,6 +162,8 @@ body {
     margin-top: 70px;
   }
 }
+/* Embla crousel css */
+
 
 /* details css */
 
@@ -212,7 +228,7 @@ body {
 
 
 .showcase .det-right .det-top .movie-title {
-  font-size: 65px;
+  font-size: 35px;
   font-weight: 700;
 }
 
@@ -228,10 +244,11 @@ body {
   color: #ffffff;
 }
 
-.showcase .det-right .movie-rating i{
- padding: 3px 4px;
- margin: 2px 3px;
+.showcase .det-right .movie-rating i {
+  padding: 3px 4px;
+  margin: 2px 3px;
 }
+
 .showcase .det-right-bottom {
   color: white;
   margin-top: 5.2rem;
@@ -308,9 +325,48 @@ body {
   font-size: 2rem;
 }
 
+/* slide overlay */
+
 .posab {
   position: absolute;
+  bottom: 45px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
 }
+
+.posab h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
 .posrel {
   position: relative;
+}
+
+.posrel .date-lang {
+  display: flex;
+  gap: 2rem;
+}
+
+.posrel .date-lang .date,
+.posrel .date-lang .lang {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.posrel img {
+  height: 80vh;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.posrel .story {
+  width: 75%;
+}
+
+.posrel .story .story-tell {
+  font-size: 2.9vmin;
+  font-weight: 600;
 }

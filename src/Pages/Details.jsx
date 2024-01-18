@@ -5,8 +5,13 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { FaStar } from "react-icons/fa";
 import { RiExternalLinkLine } from "react-icons/ri";
+import EmblaCarousel from './Emblacrouser/EmblaCarousel';
+import './Emblacrouser/Embla.css/embla.css'
 const Details = () => {
   const [movieDetail, setMovieDetail] = useState(null)
+  const OPTIONS = {}
+  const SLIDE_COUNT = 10
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
   function GetMoviesDetail() {
     let text = window.location.href
@@ -43,97 +48,100 @@ const Details = () => {
   }
   else {
     return (
-      <section className="movie-main ">
-        <div className="showcase">
-          <div className="banner">
-            <img src={"https://image.tmdb.org/t/p/original" + movieDetail.backdrop_path} alt="" />
+      <>
+        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+        <section className="movie-main ">
+          <div className="showcase">
+            <div className="banner">
+              <img src={"https://image.tmdb.org/t/p/original" + movieDetail.backdrop_path} alt="" />
 
-          </div>
-          <div className="movie-det">
-            <div className="det-left">
-              <div className="movie-poster">
-                <img src={"https://image.tmdb.org/t/p/original" + movieDetail.poster_path} alt="" />
+            </div>
+            <div className="movie-det">
+              <div className="det-left">
+                <div className="movie-poster">
+                  <img src={"https://image.tmdb.org/t/p/original" + movieDetail.poster_path} alt="" />
+                </div>
+              </div>
+              <div className="det-right">
+                <div className="det-top">
+                  <div className="movie-title">
+                    {movieDetail.original_title}
+                  </div>
+                  <div className="tagline">
+                    {movieDetail.tagline}
+                  </div>
+                  <div className="movie-rating">
+                    {movieDetail.vote_average}
+                    <i><FaStar /></i>
+                    <span className="movie-vote">
+                      ({movieDetail.vote_count}) votes
+                    </span>
+                  </div>
+                  <div className="movie-runtime">
+                    {movieDetail.runtime}min
+                  </div>
+                  <div className="movie-release">
+                    release date: {movieDetail.release_date}
+                  </div>
+                  <div className="movie-critic">
+                    {movieDetail.genres.map((genre) => (
+                      <>
+                        <span className="critic-array" id={genre.id}>
+                          {genre.name}
+                        </span>
+                      </>
+                    ))}
+                  </div>
+                </div>
+                <div className="det-right-bottom">
+                  <div className="synopsis">Synopsis</div>
+                  <div>{movieDetail.overview}</div>
+                </div>
               </div>
             </div>
-            <div className="det-right">
-              <div className="det-top">
-                <div className="movie-title">
-                  {movieDetail.original_title}
-                </div>
-                <div className="tagline">
-                  {movieDetail.tagline}
-                </div>
-                <div className="movie-rating">
-                  {movieDetail.vote_average}
-                  <i><FaStar /></i>
-                  <span className="movie-vote">
-                    ({movieDetail.vote_count}) votes
+            <div className="movie-links">
+              <div className="link-heading">Useful Links</div>
+              <a href={movieDetail.homepage}
+                target='_blank'
+                style={{ textDecoration: "none" }}
+              >
+                <p>
+                  <span className="movie-home-button1">
+                    Homepage <RiExternalLinkLine className='external-link1' />
                   </span>
-                </div>
-                <div className="movie-runtime">
-                  {movieDetail.runtime}min
-                </div>
-                <div className="movie-release">
-                  release date: {movieDetail.release_date}
-                </div>
-                <div className="movie-critic">
-                  {movieDetail.genres.map((genre) => (
-                    <>
-                      <span className="critic-array" id={genre.id}>
-                        {genre.name}
-                      </span>
-                    </>
-                  ))}
-                </div>
-              </div>
-              <div className="det-right-bottom">
-                <div className="synopsis">Synopsis</div>
-                <div>{movieDetail.overview}</div>
-              </div>
+                </p>
+              </a>
+              <a href={"https://www.imdb.com/title/" + movieDetail.imdb_id}
+                target='_blank'
+                style={{ textDecoration: "none" }}
+              >
+                <p>
+                  <span className="movie-imdb-button2">
+                    IMDb <RiExternalLinkLine className='external-link2' />
+                  </span>
+                </p>
+              </a>
+            </div>
+            <div className="movie-heading">Production Companies</div>
+            <div className="production-house">
+              {movieDetail.production_companies.map((house) => (
+                <>
+                  {(
+                    <span className="production-house-image">
+                      <img className='house-image'
+                        src={
+                          "https://image.tmdb.org/t/p/original" + house.logo_path
+                        }
+                      />
+                      <span className='house-name'>{house.name}</span>
+                    </span>
+                  )}
+                </>
+              ))}
             </div>
           </div>
-          <div className="movie-links">
-            <div className="link-heading">Useful Links</div>
-            <a href={movieDetail.homepage}
-              target='_blank'
-              style={{ textDecoration: "none" }}
-            >
-              <p>
-                <span className="movie-home-button1">
-                  Homepage <RiExternalLinkLine className='external-link1' />
-                </span>
-              </p>
-            </a>
-            <a href={"https://www.imdb.com/title/" + movieDetail.imdb_id}
-              target='_blank'
-              style={{ textDecoration: "none" }}
-            >
-              <p>
-                <span className="movie-imdb-button2">
-                  IMDb <RiExternalLinkLine className='external-link2' />
-                </span>
-              </p>
-            </a>
-          </div>
-          <div className="movie-heading">Production Companies</div>
-          <div className="production-house">
-            {movieDetail.production_companies.map((house) => (
-              <>
-                {(
-                  <span className="production-house-image">
-                    <img className='house-image' 
-                      src={
-                        "https://image.tmdb.org/t/p/original" + house.logo_path
-                    }
-                   />
-                   <span className='house-name'>{house.name}</span>
-                  </span>
-                )}
-              </>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </>
     )
   }
 }

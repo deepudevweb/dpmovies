@@ -7,6 +7,7 @@ import Details from './Pages/Details.jsx'
 import Navbar from './Components/Navbar.jsx'
 import { Card } from '@mui/material'
 import Overlay from './Pages/Overlay.jsx'
+import EmblaCarousel from './Pages/Emblacrouser/EmblaCarousel.jsx'
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="details/:id" element={<Details/>} />
       <Route path="overlay" element={<Overlay/>} />
       <Route path="card" element={<Card/>} />
+      <Route path="emblacrousel" element={<EmblaCarousel/>} />
     </Route>
   
   )
