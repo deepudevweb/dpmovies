@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Thumb } from './EmblaCarouselThumbsButton'
-import imageByIndex from './imageByIndex'
 import axios from 'axios';
 import './Embla.css/embla.css'
-import { Link } from 'react-router-dom'
 
 const EmblaCarousel = (props) => {
   let text = window.location.href
