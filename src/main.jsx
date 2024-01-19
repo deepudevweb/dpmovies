@@ -6,7 +6,9 @@ import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} fr
 import Details from './Pages/Details/Details.jsx'
 import Navbar from './Components/Navbar/Navbar.jsx'
 import { Card } from '@mui/material'
-import EmblaCarousel from './Pages/Emblacrouser/EmblaCarousel.jsx'
+import Home from './Pages/Home/Home.jsx'
+import Navmovie from './Pages/Navmovie/Navmovie.jsx'
+// import Togglebar from './Components/Navbar/Togglebar.jsx'
 
 
 
@@ -19,7 +21,9 @@ const router = createBrowserRouter(
       <Route path="navbar" element={<Navbar/>} />
       <Route path="details/:id" element={<Details/>} />
       <Route path="card" element={<Card/>} />
-      <Route path="emblacrousel" element={<EmblaCarousel/>} />
+      <Route path="home" element={<Home/>} />
+      <Route path="navmovie" element={<Navmovie/>} />
+      {/* <Route path="togglebar" element={<Togglebar/>} /> */}
     </Route>
   
   )

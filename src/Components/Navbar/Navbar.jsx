@@ -1,49 +1,53 @@
+import { useState } from 'react'
 import React from 'react'
-// import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
-// import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import IconButton from '@mui/material/IconButton';
 import Logo from '../Images/icons8-imdb-48.png'
 import './Navbar.css';
+import { IoMenu } from "react-icons/io5";
+// import { Link } from 'react-router-dom'
 
+const Navbar = () =>  {
+  const [showLinks, setShowLinks] = useState(false);
+  const [zIndex, setZIndex] = useState(null);
 
-const Navbar = () => {
-  
+  const toggleLinks = () => {
+    // setShowLinks(prevShowLinks => !prevShowLinks);
+    setShowLinks(!showLinks);
+    setZIndex(showLinks ? null : 100);
+  };
   return (
-    <nav className="navbar">
+    <>
+      <nav className="navbar">
       <div className="navbar-container">
+      <div className="navbar-icons">
+          <div className="navbar-toggle" onClick={toggleLinks}>
+            <IoMenu className='menu-icon' />
+          </div>
+        </div>
         <div className="navbar-logo">
           <img src={Logo} alt="IMDb Logo" />
         </div>
-        <div className="navbar-links">
+        <div className={`navbar-links ${showLinks ? 'show' : ''}`} style={{ zIndex: zIndex }}>
           <ul>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">Celebs</a></li>
-            <li><a href="#">More</a></li>
+            <li>Movies</li>
+            <li>TV Shows</li>
+            <li>Celebs</li>
+            <li>More</li>
           </ul>
         </div>
         <div className="navbar-search">
           <input type="text" placeholder="Search IMDb" />
           <button type="button">Search</button>
         </div>
+        <div className="navbar-auth">
+          <ul>
+            <li>Sign Up</li>
+            <li>Login</li>
+          </ul>
+        </div>
       </div>
     </nav>
-  );
-};
-
-
-  //   <Box sx={{ flexGrow: 1 }}>
-  //   <AppBar position="static " color={'success'}>
-  //   <Toolbar variant="dense">
-  //     <Typography variant="h6" color="inherit" component="div">
-  //       Dp movies
-  //     </Typography>
-  //   </Toolbar>
-  // </AppBar>
-  // </Box>
-//   )
-// }
-
-export default Navbar;
+    </>
+  )
+    };
+    
+    export default Navbar;

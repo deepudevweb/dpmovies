@@ -12,9 +12,6 @@ body {
 
 
 
-
-
-
 /* hide the input visually, but don't give it "display: none" as it will break keyboard controls */
 
 @media (max-width: 768px) {
