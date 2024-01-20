@@ -200,7 +200,7 @@
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 390px) {
   .navbar img {
     margin: 0 3px;
   }
