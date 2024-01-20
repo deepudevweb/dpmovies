@@ -29,7 +29,7 @@ const Navbar = () =>  {
         <div className={`navbar-links ${showLinks ? 'show' : ''}`} style={{ zIndex: zIndex }}>
           <ul>
             <li>Movies</li>
-            <li>TV Shows</li>
+            <li>TVShows</li>
             <li>Celebs</li>
             <li>More</li>
           </ul>
