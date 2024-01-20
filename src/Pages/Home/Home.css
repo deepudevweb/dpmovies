@@ -5,3 +5,37 @@
     color: #F5C518;
     margin-top: 1.5rem;
 }
+
+ .home {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    row-gap: 18px;
+    margin-top: 12px;
+  
+  } 
+/* @media (max-width: 700px) {
+    .home {
+        flex-wrap: wrap;
+        display: grid;
+        justify-content: space-evenly;
+        row-gap: 21px;
+        margin-top: 14px;
+        padding: 2vmin 5vmin;
+        grid-template-columns: 1fr 2fr;
+    }
+} */
+/* @media only screen and (max-width: 576px) {
+    /* .home {
+        flex-wrap: wrap;
+        display: grid;
+        justify-content: space-evenly;
+        row-gap: 11px;
+        margin-top: 14px;
+        padding: 2vmin;
+        grid-template-columns: 2fr 1fr;
+    } */
+    /* .card {
+        height: 120px;
+        width: 120px;
+    } */

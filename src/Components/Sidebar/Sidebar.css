@@ -1,4 +1,4 @@
-.home {
+/* .home {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
@@ -6,7 +6,7 @@
     margin-top: 12px;
     padding: 2vmin 5vmin;
   
-  }
+  } */
   
   
   .carousel-control-prev:hover,
@@ -57,5 +57,37 @@
   .posrel .story .story-tell {
     font-size: 2.9vmin;
     font-weight: 600;
+  }
+
+  @media (max-width: 767px) {
+    .posrel img {
+      height: 50vh;
+      object-fit: cover;
+      background-size: cover;
+    }
+    
+    .posab {
+      position: absolute;
+      bottom: 25px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      margin-left: 10vmin;
+    }
+    
+    .posab h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .posrel .date-lang .date, .posrel .date-lang .lang {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    
+    .posrel .story .story-tell {
+      font-size: 2vmin;
+      font-weight: 600;
+    }
   }
   
