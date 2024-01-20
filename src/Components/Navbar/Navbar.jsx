@@ -3,17 +3,18 @@ import React from 'react'
 import Logo from '../Images/icons8-imdb-48.png'
 import './Navbar.css';
 import { IoMenu } from "react-icons/io5";
+import axios from 'axios';
 // import { Link } from 'react-router-dom'
 
 const Navbar = () =>  {
   const [showLinks, setShowLinks] = useState(false);
   const [zIndex, setZIndex] = useState(null);
-
   const toggleLinks = () => {
     // setShowLinks(prevShowLinks => !prevShowLinks);
     setShowLinks(!showLinks);
     setZIndex(showLinks ? null : 100);
   };
+  
   return (
     <>
       <nav className="navbar">

@@ -1,14 +1,32 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 const Card = ({poster, name, detail, id, dat}) => {
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
   function Tunicate (string) {
     return string.slice(0, 90) + "..."
   }
+
+  //  { isLoading == null ?
+  //  <div className="cards">
+  //   <SkeletonTheme color="#202020" highlightColor="#444">
+  //     <Skeleton height={300} duration={2} />
+  //   </SkeletonTheme>
+  // </div>
+  // } :
   return (
     <>
     <Link 
@@ -16,6 +34,13 @@ const Card = ({poster, name, detail, id, dat}) => {
     style={{ textDecoration: "none", color: "white" }}
     >
       <div className="box">
+      {isLoading ? (
+        <div className="cards">
+          <SkeletonTheme color="#202020" highlightColor="#444">
+            <Skeleton height={300} duration={2} />
+          </SkeletonTheme>
+        </div>
+      ) : (
         <div className="card">
           <div className="overlay"></div>
           <img src={poster} alt="" />
@@ -26,9 +51,8 @@ const Card = ({poster, name, detail, id, dat}) => {
             <div className="date">{dat}</div>
           </div>
           </div>
-         
-          
-        </div>
+          </div>
+)}
       </div>
       </Link>
     </>
