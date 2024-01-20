@@ -240,7 +240,7 @@
     margin: 0 auto;
     padding: 0px 6px;
     row-gap: 1rem;
-    gap: .5rem;
+    gap: 1.2rem;
 }
   .navbar-auth ul {
     list-style-type: none;
