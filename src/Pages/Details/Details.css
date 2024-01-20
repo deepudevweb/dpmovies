@@ -1,21 +1,175 @@
 .showcase {
-    width: 80%;
-    height: 500px;
-    position: relative;
-    color: white;
-    text-align: center;
-  }
-  
-  .movie-main {
+  width: 80%;
+  height: 500px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.movie-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.showcase img {
+  height: 500px;
+  object-fit: cover;
+  object-position: 0 21%;
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 2cap;
+  border-bottom-right-radius: 20px;
+}
+
+.showcase .movie-det {
+  align-items: center;
+  bottom: 293px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.movie-det .det-left img {
+  width: 340px;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 25px;
+}
+
+.showcase .det-right {
+  text-align: left;
+  margin-left: 17px;
+}
+
+.showcase .det-right .det-top>div {
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px #000;
+}
+
+.showcase .det-right .movie-critic .critic-array {
+  border: 1px solid white;
+  padding: 4px 10px;
+  border-radius: 9px;
+  margin: 2px 4px
+}
+
+
+.showcase .det-right .det-top .movie-title {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.showcase .movie-links {
+  color: black;
+}
+
+.showcase .movie-heading {
+  color: black;
+}
+
+.showcase .det-right {
+  color: #ffffff;
+}
+
+.showcase .det-right .movie-rating i {
+  padding: 3px 4px;
+  margin: 2px 3px;
+}
+
+.showcase .det-right-bottom {
+  color: white;
+  margin-top: 5.2rem;
+}
+
+
+.showcase .det-right-bottom .synopsis {
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+.showcase .movie-links {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  bottom: 150px;
+}
+
+.showcase .movie-links .link-heading {
+  color: white;
+  font-size: 2rem;
+}
+
+.showcase .movie-links .movie-home-button1 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  width: 170px;
+  background-color: red;
+}
+
+.showcase .movie-links .movie-imdb-button2 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  width: 150px;
+  background-color: yellow;
+}
+
+
+
+
+.showcase .production-house {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase .production-house .house-image {
+  height: 60px;
+  width: auto;
+  filter: invert(1);
+}
+
+.showcase .production-house .house-name {
+  color: white;
+  flex-direction: column;
+  display: flex;
+}
+
+.showcase .movie-heading {
+  color: white;
+  font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+
+
+
+  .showcase .movie-det {
     align-items: center;
+    bottom: 148px;
     display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
-  }
-  
+}
+
   .showcase img {
-    height: 500px;
+    height: 186px;
     object-fit: cover;
     object-position: 0 21%;
     width: 100%;
@@ -23,135 +177,104 @@
     border-top-left-radius: 0px;
     border-bottom-left-radius: 2cap;
     border-bottom-right-radius: 20px;
-  }
-  
-  .showcase .movie-det {
-    align-items: center;
-    bottom: 293px;
-    display: flex;
-    position: relative;
-    width: 100%;
-  }
-  
+}
   .movie-det .det-left img {
-    width: 340px;
-    height: auto;
-    border-radius: 10px;
-    margin-left: 25px;
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 8px;
   }
   
-  .showcase .det-right {
-    text-align: left;
-    margin-left: 17px;
-  }
-  
-  .showcase .det-right .det-top>div {
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 5px #000;
-  }
-  
-  .showcase .det-right .movie-critic .critic-array {
-    border: 1px solid white;
-    padding: 4px 10px;
-    border-radius: 9px;
-    margin: 2px 4px
-  }
-  
-  
+
   .showcase .det-right .det-top .movie-title {
-    font-size: 35px;
+    font-size: 19px;
     font-weight: 700;
-  }
-  
-  .showcase .movie-links {
-    color: black;
-  }
-  
-  .showcase .movie-heading {
-    color: black;
-  }
-  
-  .showcase .det-right {
-    color: #ffffff;
-  }
-  
-  .showcase .det-right .movie-rating i {
-    padding: 3px 4px;
-    margin: 2px 3px;
-  }
-  
-  .showcase .det-right-bottom {
-    color: white;
-    margin-top: 5.2rem;
-  }
-  
-  
-  .showcase .det-right-bottom .synopsis {
-    margin: 1rem 0;
-    font-size: 20px;
-  }
-  
-  .showcase .movie-links {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    bottom: 150px;
-  }
-  
-  .showcase .movie-links .link-heading {
-    color: white;
-    font-size: 2rem;
-  }
-  
-  .showcase .movie-links .movie-home-button1 {
-    align-items: center;
-    border-radius: 20px;
-    color: #000;
-    cursor: pointer;
-    display: flex;
-    font-weight: 700;
-    justify-content: center;
-    padding: 0.8rem 2rem;
-    width: 170px;
-    background-color: red;
-  }
-  
-  .showcase .movie-links .movie-imdb-button2 {
-    align-items: center;
-    border-radius: 20px;
-    color: #000;
-    cursor: pointer;
-    display: flex;
-    font-weight: 700;
-    justify-content: center;
-    padding: 0.8rem 2rem;
-    width: 150px;
-    background-color: yellow;
-  }
-  
-  
-  
-  
-  .showcase .production-house {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .showcase .production-house .house-image {
-    height: 60px;
-    width: auto;
-    filter: invert(1);
-  }
-  
-  .showcase .production-house .house-name {
-    color: white;
-    flex-direction: column;
-    display: flex;
-  }
-  
-  .showcase .movie-heading {
-    color: white;
-    font-size: 2rem;
-  }
+}
+.showcase .det-right .det-top>div {
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 5px #000;
+  font-size: .6rem;
+}
+
+.showcase .det-right .movie-critic .critic-array {
+  border: 1px solid white;
+  padding: 3px 5px;
+  border-radius: 9px;
+  margin: 0px 2px;
+  font-size: 6px;
+}
+
+.showcase .det-right-bottom {
+  color: white;
+  margin-top: 0.2rem;
+}
+
+.det-right .tagline {
+  font-size: .6rem;
+}
+.det-right .movie-rating {
+  font-size: .8rem;
+}
+
+.showcase .det-right-bottom .synopsis {
+  margin: .2rem 0;
+  font-size: 10px;
+}
+
+.showcase .det-right-bottom .oview {
+  font-size: .5rem;
+}
+
+.showcase .movie-links .link-heading {
+  color: white;
+  font-size: .5rem;
+}
+
+.showcase .movie-links .movie-home-button1 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.3rem 0.4rem;
+  width: 81px;
+  background-color: red;
+  font-size: .6rem;
+}
+.showcase .movie-links .movie-imdb-button2 {
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.4rem 0.2rem;
+  width: 57px;
+  background-color: yellow;
+  font-size: .5rem;
+}
+
+.showcase .movie-links {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  bottom: 50px;
+}
+
+.showcase .movie-heading {
+  color: white;
+  font-size: .8rem;
+}
+
+.showcase .production-house .house-image {
+  height: 15px;
+  width: auto;
+}
+
+.showcase .production-house .house-name {
+  font-size: .5rem;
+}
+}

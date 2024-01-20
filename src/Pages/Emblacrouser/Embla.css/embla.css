@@ -143,3 +143,25 @@
     bottom: 0;
   }
   
+
+  @media (max-width: 767px) {
+    .embla {
+      --slide-spacing: .1rem;
+      --slide-size: 100%;
+      --slide-height: 23rem;
+      padding: 0.01rem;
+  }
+
+  .embla__slide__img {
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 30%;
+    transition: all 0.2s ease;
+}
+
+.embla__slide__img{
+  scale: none;
+}
+  }

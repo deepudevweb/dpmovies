@@ -98,7 +98,7 @@ const Details = () => {
                 </div>
                 <div className="det-right-bottom">
                   <div className="synopsis">Synopsis</div>
-                  <div>{movieDetail.overview}</div>
+                  <div className='oview'>{movieDetail.overview}</div>
                 </div>
               </div>
             </div>
